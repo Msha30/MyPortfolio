@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Myeisha Ann Coruno | Portfolio</title>
+    <link rel="icon" type="image/png" href="photos/logo.png">
     <meta name="description"
         content="Portfolio of Myeisha Ann Coruno, BSIT student focused on UI/UX, frontend and software development.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -881,28 +882,17 @@
             <article class="edu-item">
                 <h3>BS in Information Technology with Specialization in Mobile and Internet Technology (BSIT-MI)</h3>
                 <p class="edu-meta">2023 – 2027 &nbsp;|&nbsp; NU Fairview</p>
-                <ul>
-                    <li>Accomplishment 1</li>
-                    <li>Accomplishment 2</li>
-                </ul>
+
             </article>
 
             <article class="edu-item">
                 <h3>STEM Strand – Senior High School</h3>
                 <p class="edu-meta">2021 – 2023 &nbsp;|&nbsp; NU Fairview</p>
-                <ul>
-                    <li>Accomplishment 1</li>
-                    <li>Accomplishment 2</li>
-                </ul>
             </article>
 
             <article class="edu-item">
                 <h3>Junior High School</h3>
                 <p class="edu-meta">2017 – 2021 &nbsp;|&nbsp; Divine Grace School</p>
-                <ul>
-                    <li>Accomplishment 1</li>
-                    <li>Accomplishment 2</li>
-                </ul>
             </article>
         </div>
     </section>
@@ -1036,8 +1026,8 @@
             { name: 'Best Pitch Innovation', from: 'NU Fairview Technovate 2026', year: 'October 2026' },
             { name: 'Bronze Awardee', from: 'StartUp QC Squad 3', year: 'September 2026' },
             { name: '4th Place', from: 'Next-Gen Startup Challenge', year: 'June 2026' },
-            { name: 'Best in Presentation', from: 'NU Fairview CPExplore', year: 'May 2025' },
             { name: '2nd Runner-Up', from: 'PacketHacks x HackTheClimate', year: 'September 2025' },
+            { name: 'Best in Presentation', from: 'NU Fairview CPExplore', year: 'May 2025' },
             { name: 'Best in Portfolio', from: 'BSIT NSTP', year: 'July 2024' },
             { name: '2nd Place', from: 'Python Programming Competition', year: 'June 2024' },
             { name: '2nd Runner-Up', from: 'NU Fairview University Week ID Lanyard Design Contest', year: 'April 2024' }
@@ -1132,7 +1122,7 @@
 
         document.getElementById('award-list').innerHTML = awards.map((a, k) => {
             return `<details class="award"><summary><span>${a.name}<small>${a.from}, ${a.year}</small></span></summary>
-  <div class="dbody"><div class="trio">${[1, 2, 3].map(n => { const num = k * 3 + n; return `<div class="slide" data-zoom="${P}Awards/${num}.png"><i>Photo ${num}</i><img src="${P}Awards/${num}.png" alt="${a.name} photo ${n}" onerror="this.remove()"></div>`; }).join('')}</div></div></details>`;
+  <div class="dbody"><div class="trio">${[1, 2, 3].map(n => { const num = k * 3 + n; return `<div class="slide" data-zoom="${P}Awards/${num}.png"><i>Photo ${num}</i><img src="${P}Awards/${num}.jpg" alt="${a.name} photo ${n}" onerror="this.remove()"></div>`; }).join('')}</div></div></details>`;
         }).join('');
 
         // fill the carousels: placeholders first, real photos once the folder list arrives
