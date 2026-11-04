@@ -381,13 +381,13 @@
         }
 
         .slide.app {
-            width: 150px;
+            width: 200px;
             aspect-ratio: 9/19.3;
             border-radius: 8px
         }
 
         .slide.web {
-            width: 420px;
+            width: 500px;
             aspect-ratio: 2/1
         }
 
@@ -694,7 +694,8 @@
             border-radius: 8px;
             padding: 20px;
             text-decoration: none;
-            transition: background .2s, color .2s
+            transition: background .2s, color .2s;
+            background: white;
         }
 
         .links a:hover {
@@ -909,16 +910,16 @@
             <h2>Contact</h2>
             <p class="big">Have a project, an internship, or a question? Send me a message.</p>
             <div class="links">
-                <a href="mailto:juan.delacruz@email.com"><small>Email</small><b>juan.delacruz@email.com</b></a>
-                <a href="https://linkedin.com/in/your-handle" target="_blank"
-                    rel="noopener"><small>LinkedIn</small><b>linkedin.com/in/your-handle</b></a>
-                <a href="tel:+639171234567"><small>Phone</small><b>+63 917 123 4567</b></a>
-                <a href="https://facebook.com/your-team-page" target="_blank"
-                    rel="noopener"><small>Team Facebook Page</small><b>facebook.com/your-team-page</b></a>
+                <a href="mailto:corunoisha@gmail.com"><small>Email</small><b>corunoisha@gmail.com</b></a>
+                <a href="https://www.linkedin.com/in/myeisha-coruno/" target="_blank"
+                    rel="noopener"><small>LinkedIn</small><b>linkedin.com/in/myeisha-coruno/</b></a>
+                <a href="tel:+63942008808"><small>Phone</small><b>+63 942 008 808</b></a>
+                <a href="https://www.facebook.com/thebitssss" target="_blank" rel="noopener"><small>Team Facebook
+                        Page</small><b>facebook.com/thebitssss</b></a>
             </div>
         </div>
     </section>
-    <footer>© <span id="yr"></span> Juan Dela Cruz. Built by hand.</footer>
+    <footer>© <span id="yr"></span> Myeisha Ann Coruno</footer>
 
     <div id="lb"><img alt=""></div>
 
@@ -927,33 +928,96 @@
         // Each project's car list: [folder, kind, number (no longer used), label]. Folders are scanned automatically.
         const projects = [
             {
-                name: 'MyFairview', year: 2025, stack: ['Flutter', 'Laravel', 'MySQL', 'Figma'],
-                car: [['App', 'app', 6, 'Mobile app'], ['Web', 'web', 6, 'Web app']],
-                desc: 'A community portal for Fairview residents to report issues, read announcements, and request barangay documents.',
-                role: ['Lead UI/UX designer', 'Built the web frontend', 'Wrote part of the REST API'],
-                feats: ['Issue reporting with photo upload', 'Document requests with status tracking', 'Announcements and push notifications'],
-                demo: { url: 'https://example.com/myfairview', user: 'demo@myfairview.com', pass: 'demo1234' }
+                name: 'MyFairview',
+                year: 2025,
+                stack: ['Flutter', 'Laravel', 'MySQL', 'Firebase', 'Figma', 'IoT', 'LoRa', 'GPS'],
+                car: [
+                    ['App', 'app', 6, 'Mobile app'],
+                    ['Web', 'web', 6, 'Web app'],
+                    ['Hardware', 'hw', 6, 'IoT hardware']
+                ],
+                desc: 'An IoT-based disaster risk reduction and emergency response management system designed to help Barangay Fairview monitor flood conditions, coordinate emergency response, and keep residents informed through connected web and mobile platforms.',
+                role: [
+                    'Lead UI/UX designer',
+                    'Frontend developer for web and mobile interfaces',
+                    'Designed user flows and system interfaces',
+                    'Contributed to system integration and testing'
+                ],
+                feats: [
+                    'Real-time flood monitoring with IoT water-level sensors',
+                    'Automated flood alerts and warning notifications',
+                    'GPS-based emergency vehicle tracking',
+                    'Community incident reporting and hotline coordination',
+                    'Centralized disaster management dashboard',
+                    'LoRa communication for connectivity during internet disruptions'
+                ],
+                demo: {
+                    url: 'https://msha30.github.io/MyFairview/index.html',
+                    user: 'admin@myfairview.com',
+                    pass: 'adminmyfairview'
+                }
             },
             {
-                name: 'SafeSpace', year: 2025, stack: ['React Native', 'Node.js', 'MongoDB'],
-                car: [['App', 'app', 6, 'Mobile app'], ['Web', 'web', 6, 'Web app']],
-                desc: 'A mental wellness platform where students can check in on their mood, book counselors, and find support anonymously.',
-                role: ['UI/UX designer', 'Frontend developer'],
-                feats: ['Daily mood check-ins', 'Anonymous counselor chat', 'Admin dashboard for guidance offices']
+                name: 'SafeSpace',
+                year: 2025,
+                stack: ['React Native', 'Node.js', 'MongoDB'],
+                car: [
+                    ['App', 'app', 6, 'Mobile app'],
+                    ['Web', 'web', 6, 'Web app']
+                ],
+                desc: 'A student-focused mental wellness platform that provides accessible emotional support through mood tracking, anonymous counseling, and connections to school guidance services.',
+                role: [
+                    'UI/UX designer',
+                    'Frontend developer'
+                ],
+                feats: [
+                    'Daily mood tracking and emotional check-ins',
+                    'Anonymous communication with counselors',
+                    'Counseling appointment management',
+                    'Admin dashboard for school guidance offices'
+                ]
             },
             {
-                name: 'EcoTumbler', year: 2024, stack: ['Arduino', 'Flutter', 'Firebase', 'IoT'],
-                car: [['App', 'app', 3, 'Mobile app'], ['Hardware', 'hw', 6, 'Hardware']],
-                desc: 'A smart tumbler that tracks water intake and rewards eco-friendly habits, built as our capstone.',
-                role: ['App designer and developer', 'Helped wire and test the hardware'],
-                feats: ['Live water-level sensing', 'Habit streaks and reward points', 'Syncs to the app over Bluetooth']
+                name: 'EcoTumbler',
+                year: 2024,
+                stack: ['Arduino', 'Flutter', 'Firebase', 'IoT', 'Solar Technology'],
+                car: [
+                    ['App', 'app', 3, 'Mobile app'],
+                    ['Hardware', 'hw', 6, 'Hardware']
+                ],
+                desc: 'A solar-powered, app-controlled composting machine that converts household food waste into compost through automated barrel rotation and smart environmental monitoring.',
+                role: [
+                    'Concept developer',
+                    'UI/UX designer',
+                    'Frontend developer',
+                    'Contributed to hardware assembly and testing'
+                ],
+                feats: [
+                    'Automated compost barrel rotation',
+                    'Temperature and humidity monitoring',
+                    'Smart alerts for composting conditions',
+                    'Solar-powered operation',
+                    'Mobile app for monitoring and controlling the machine'
+                ]
             },
             {
-                name: 'Pawprints', year: 2023, stack: ['Flutter', 'Firebase', 'Figma'],
-                car: [['App', 'app', 6, 'Mobile app']],
-                desc: 'A pet care app for tracking vet visits, vaccinations, and feeding schedules.',
-                role: ['UI/UX designer', 'Mobile developer'],
-                feats: ['Pet profiles', 'Vaccine reminders', 'Vet appointment log']
+                name: 'Pawprints',
+                year: 2023,
+                stack: ['Flutter', 'Firebase', 'Figma'],
+                car: [
+                    ['App', 'app', 6, 'Mobile app']
+                ],
+                desc: 'A pet care management application designed to help pet owners organize their pets’ health records, monitor daily care routines, and keep track of important veterinary schedules.',
+                role: [
+                    'UI/UX designer',
+                    'Mobile application developer'
+                ],
+                feats: [
+                    'Individual pet profiles and records',
+                    'Vaccination and medication reminders',
+                    'Veterinary appointment tracking',
+                    'Pet feeding schedules'
+                ]
             }
         ];
         const awards = [
@@ -1048,7 +1112,7 @@
 </article>`).join('');
 
         document.getElementById('certs').innerHTML = certs.map((c, i) =>
-            `<div class="cert" data-zoom="${P}Certifications/${i + 1}.png"><i>${c}</i><img src="${P}Certifications/${i + 1}.png" alt="${c}" onerror="this.remove()"><span>${c}</span></div>`).join('');
+            `<div class="cert" data-zoom="${P}Certifications/${i + 1}.png"><i>Certificate ${i + 1}</i><img src="${P}Certifications/${i + 1}.png" alt="Certificate ${i + 1}" onerror="this.remove()"></div>`).join('');
 
         document.getElementById('award-list').innerHTML = awards.map(a => {
             const s = slug(a.name);
