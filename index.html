@@ -427,6 +427,17 @@
             }
         }
 
+        .car.still {
+            mask-image: none;
+            overflow: visible
+        }
+
+        .track.still {
+            animation: none;
+            width: auto;
+            flex-wrap: wrap
+        }
+
         /* dropdowns */
         details {
             border-top: 1.5px solid var(--ink);
@@ -909,7 +920,7 @@
             },
             {
                 name: 'Ecotumbler', year: 2024, stack: ['Arduino', 'Flutter', 'Firebase', 'IoT'],
-                car: [['App', 'app', 3, 'Mobile app'], ['Hardware', 'hw', 6, 'Hardware']],
+                car: [['App', 'app', 6, 'Mobile app'], ['Hardware', 'hw', 6, 'Hardware']],
                 desc: 'A smart tumbler that tracks water intake and rewards eco-friendly habits, built as our capstone.',
                 role: ['App designer and developer', 'Helped wire and test the hardware'],
                 feats: ['Live water-level sensing', 'Habit streaks and reward points', 'Syncs to the app over Bluetooth']
@@ -945,6 +956,7 @@
         const IMG = /\.(png|jpe?g|webp|gif|avif)$/i;
         const SIZE = { app: 150, web: 320, hw: 240 };   // slide widths, same as the CSS
         const GAP = 18, PX_PER_SEC = 28;                // carousel speed (lower = slower)
+        const STATIC_MAX = { app: 6, hw: 6, web: 0 };   // this many pics or fewer: no scrolling, just show them
 
         async function loadTree() {
             let cached = null;
@@ -979,14 +991,21 @@
                 const { dir, kind, label } = car.dataset;
                 let files = filesIn(paths || [], dir);
                 if (!files.length) files = [null, null, null, null];   // empty folder: placeholders
+                const item = (f, i) => f
+                    ? slide(f, kind, `${label} ${i + 1}`)
+                    : `<div class="slide ${kind}"><i>${paths ? 'Add images to ' + dir : ''}</i></div>`;
+                const track = car.querySelector('.track');
+
+                // few pics: show them as they are, no movement
+                const still = files.length <= (STATIC_MAX[kind] || 0);
+                car.classList.toggle('still', still);
+                track.classList.toggle('still', still);
+                if (still) { track.innerHTML = files.map(item).join(''); return; }
+
+                // many pics: slow endless loop
                 const w = SIZE[kind] + GAP;
                 const reps = Math.max(1, Math.ceil(car.clientWidth / (files.length * w)));
-                const half = Array.from({ length: reps }, () => files).flat()
-                    .map((f, i) => f
-                        ? slide(f, kind, `${label} ${i + 1}`)
-                        : `<div class="slide ${kind}"><i>${paths ? 'Add images to ' + dir : ''}</i></div>`)
-                    .join('');
-                const track = car.querySelector('.track');
+                const half = Array.from({ length: reps }, () => files).flat().map(item).join('');
                 track.innerHTML = half + half;
                 track.style.setProperty('--t', (reps * files.length * w / PX_PER_SEC) + 's');
             });
