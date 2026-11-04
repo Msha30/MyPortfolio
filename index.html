@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Juan Dela Cruz | UI/UX & Software Developer</title>
+    <title>Myeisha Ann Coruno | Portfolio</title>
     <meta name="description"
-        content="Portfolio of Juan Dela Cruz, BSIT student focused on UI/UX, frontend and software development.">
+        content="Portfolio of Myeisha Ann Coruno, BSIT student focused on UI/UX, frontend and software development.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,wght@0,400;1,400&family=Fira+Sans:wght@400;500;600&display=swap"
@@ -350,25 +350,34 @@
 
         /* carousels: always drifting */
         .car {
-            overflow: hidden;
+            overflow-x: auto;
+            overscroll-behavior-x: contain;
+            scrollbar-width: none;
+            cursor: grab;
             mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent)
+        }
+
+        .car::-webkit-scrollbar {
+            display: none
+        }
+
+        .car.drag {
+            cursor: grabbing
         }
 
         .track {
             display: flex;
             gap: 18px;
-            width: max-content;
-            animation: drift var(--t, 70s) linear infinite
+            width: max-content
         }
 
-        .car:hover .track {
-            animation-play-state: paused
+        .car.still {
+            cursor: auto
         }
 
-        @keyframes drift {
-            to {
-                transform: translateX(calc(-50% - 9px))
-            }
+        .slide img {
+            -webkit-user-drag: none;
+            user-select: none
         }
 
         .slide {
@@ -641,7 +650,7 @@
 
         .award summary small {
             display: block;
-            font: 400 15px var(--s);
+            font: 400 19px var(--s);
             font-style: italic;
             text-transform: none;
             color: var(--blue);
@@ -930,13 +939,13 @@
             {
                 name: 'MyFairview',
                 year: 2025,
-                stack: ['Flutter', 'Laravel', 'MySQL', 'Firebase', 'Figma', 'IoT', 'LoRa', 'GPS'],
+                stack: ['Flutter', 'Firebase', 'IoT', 'LoRa', 'GPS', 'ESP32'],
                 car: [
                     ['App', 'app', 6, 'Mobile app'],
                     ['Web', 'web', 6, 'Web app'],
                     ['Hardware', 'hw', 6, 'IoT hardware']
                 ],
-                desc: 'An IoT-based disaster risk reduction and emergency response management system designed to help Barangay Fairview monitor flood conditions, coordinate emergency response, and keep residents informed through connected web and mobile platforms.',
+                desc: 'MyFairview is an IoT-based disaster risk reduction and emergency response management system for Barangay Fairview that uses real-time monitoring, GPS tracking, and centralized communication tools to improve disaster preparedness and emergency response.',
                 role: [
                     'Lead UI/UX designer',
                     'Frontend developer for web and mobile interfaces',
@@ -960,81 +969,88 @@
             {
                 name: 'SafeSpace',
                 year: 2025,
-                stack: ['React Native', 'Node.js', 'MongoDB'],
+                stack: ['Android Studio', 'Canva', 'Firebase'],
                 car: [
                     ['App', 'app', 6, 'Mobile app'],
                     ['Web', 'web', 6, 'Web app']
                 ],
-                desc: 'A student-focused mental wellness platform that provides accessible emotional support through mood tracking, anonymous counseling, and connections to school guidance services.',
+                desc: 'SafeSpace is a mobile-based peer support platform for NU Fairview that provides students with a secure and confidential space to connect with Peer Facilitators, join support communities, and access emotional and academic support.',
                 role: [
                     'UI/UX designer',
-                    'Frontend developer'
+                    'Frontend developer',
+                    'Concept developer'
                 ],
                 feats: [
-                    'Daily mood tracking and emotional check-ins',
-                    'Anonymous communication with counselors',
-                    'Counseling appointment management',
-                    'Admin dashboard for school guidance offices'
+                    'Confidential One-on-One Peer Chat',
+                    'Topic-Based Support Group Chats',
+                    'Peer Support Session Scheduling',
+                    'Peer Facilitator Profiles and Matching'
                 ]
             },
             {
                 name: 'EcoTumbler',
                 year: 2024,
-                stack: ['Arduino', 'Flutter', 'Firebase', 'IoT', 'Solar Technology'],
+                stack: ['ESP32', 'Android Studio', 'IoT', 'Solar Technology'],
                 car: [
                     ['App', 'app', 3, 'Mobile app'],
                     ['Hardware', 'hw', 6, 'Hardware']
                 ],
-                desc: 'A solar-powered, app-controlled composting machine that converts household food waste into compost through automated barrel rotation and smart environmental monitoring.',
+                desc: 'EcoTumbler is a smart, solar-powered composting machine that transforms household food waste into compost through automated barrel rotation, supported by mobile app monitoring and intelligent waste management features.',
                 role: [
                     'Concept developer',
                     'UI/UX designer',
                     'Frontend developer',
-                    'Contributed to hardware assembly and testing'
                 ],
                 feats: [
-                    'Automated compost barrel rotation',
-                    'Temperature and humidity monitoring',
-                    'Smart alerts for composting conditions',
-                    'Solar-powered operation',
-                    'Mobile app for monitoring and controlling the machine'
+                    'Automated Compost Barrel Rotation',
+                    'Temperature and Humidity Monitoring',
+                    'Smart Composting Schedules',
+                    'AI-Powered Composting Recommendations'
                 ]
             },
             {
                 name: 'Pawprints',
                 year: 2023,
-                stack: ['Flutter', 'Firebase', 'Figma'],
+                stack: ['Canva', 'Android Studio', 'Firebase'],
                 car: [
                     ['App', 'app', 6, 'Mobile app']
                 ],
-                desc: 'A pet care management application designed to help pet owners organize their pets’ health records, monitor daily care routines, and keep track of important veterinary schedules.',
+                desc: 'PawPrints is a mobile application in the Philippines that promotes responsible pet ownership and dog welfare by providing a platform for reporting stray and missing dogs, finding nearby pet clinics, discovering adoptable dogs, and connecting verified pet owners within a community.',
                 role: [
                     'UI/UX designer',
-                    'Mobile application developer'
+                    'Mobile application developer',
+                    'Concept developer'
                 ],
                 feats: [
-                    'Individual pet profiles and records',
-                    'Vaccination and medication reminders',
-                    'Veterinary appointment tracking',
-                    'Pet feeding schedules'
+                    'Stray Dog Reporting',
+                    'Missing Dog Tracking',
+                    'Dog Adoption Listings',
+                    'Nearby Veterinary Clinics'
                 ]
             }
         ];
+        // Award photos: put them all in photos/Awards/ named 1.png, 2.png, 3.png ...
+        // Award 1 uses 1-3, award 2 uses 4-6, award 3 uses 7-9, and so on (3 per award, in list order).
         const awards = [
-            { name: 'Best Capstone Project', from: 'Your University, College of IT', year: 2025, desc: 'Awarded to Ecotumbler for innovation and real-world impact among 30 capstone teams.' },
-            { name: '1st Place, Hackathon', from: 'Tech Event Name', year: 2024, desc: 'Built a working prototype in 24 hours with a team of four.' },
-            { name: "Dean's Lister", from: 'Your University', year: 2024, desc: 'Recognized for a general weighted average of 1.5 or better.' }
+            { name: 'NUVATION Award for Best Overall Innovation', from: 'NU Fairview Technovate 2026', year: 'October 2026' },
+            { name: 'Best Pitch Innovation', from: 'NU Fairview Technovate 2026', year: 'October 2026' },
+            { name: 'Bronze Awardee', from: 'StartUp QC Squad 3', year: 'September 2026' },
+            { name: '4th Place', from: 'Next-Gen Startup Challenge', year: 'June 2026' },
+            { name: 'Best in Presentation', from: 'NU Fairview CPExplore', year: 'May 2025' },
+            { name: '2nd Runner-Up', from: 'PacketHacks x HackTheClimate', year: 'September 2025' },
+            { name: 'Best in Portfolio', from: 'BSIT NSTP', year: 'July 2024' },
+            { name: '2nd Place', from: 'Python Programming Competition', year: 'June 2024' },
+            { name: '2nd Runner-Up', from: 'NU Fairview University Week ID Lanyard Design Contest', year: 'April 2024' }
         ];
         const certs = ['', '', '', ''];
 
-        const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-');
         const slide = (path, cls, label) =>
             `<div class="slide ${cls}"><i>${label}</i><img src="${path}" alt="${label}" loading="lazy" onerror="this.remove()"></div>`;
 
         // ---- Auto-detect photos: shows whatever is in each folder, any number, any filename ----
         const REPO = 'Msha30/MyPortfolio', BRANCH = 'main';
         const IMG = /\.(png|jpe?g|webp|gif|avif)$/i;
-        const SIZE = { app: 150, web: 420, hw: 340 };   // slide widths, same as the CSS
+        const SIZE = { app: 200, web: 500, hw: 340 };   // slide widths, must match the CSS (.slide.app / .web / .hw)
         const GAP = 18, PX_PER_SEC = 28;                // carousel speed (lower = slower)
         const STATIC_MAX = { app: 6, hw: 4, web: 0 };   // this many pics or fewer: no scrolling, just show them
 
@@ -1064,7 +1080,7 @@
 
         // n and speed are no longer used; they stay so the project list below doesn't change
         const carousel = (folder, sub, kind, n, label, speed) =>
-            `<div class="label">${label} UI</div><div class="car" data-dir="photos/${folder}/${sub}" data-kind="${kind}" data-label="${label}"><div class="track"></div></div>`;
+            `<div class="label">${label}</div><div class="car" data-dir="photos/${folder}/${sub}" data-kind="${kind}" data-label="${label}"><div class="track"></div></div>`;
 
         function fillCarousels(paths) {
             document.querySelectorAll('.car[data-dir]').forEach(car => {
@@ -1082,12 +1098,12 @@
                 track.classList.toggle('still', still);
                 if (still) { track.innerHTML = files.map(item).join(''); return; }
 
-                // many pics: slow endless loop
+                // many pics: endless loop made of 3 copies, so you can scroll either way
                 const w = SIZE[kind] + GAP;
                 const reps = Math.max(1, Math.ceil(car.clientWidth / (files.length * w)));
-                const half = Array.from({ length: reps }, () => files).flat().map(item).join('');
-                track.innerHTML = half + half;
-                track.style.setProperty('--t', (reps * files.length * w / PX_PER_SEC) + 's');
+                const one = Array.from({ length: reps }, () => files).flat().map(item).join('');
+                track.innerHTML = one + one + one;
+                setupMotion(car, reps * files.length * w);
             });
         }
 
@@ -1114,11 +1130,9 @@
         document.getElementById('certs').innerHTML = certs.map((c, i) =>
             `<div class="cert" data-zoom="${P}Certifications/${i + 1}.png"><i>Certificate ${i + 1}</i><img src="${P}Certifications/${i + 1}.png" alt="Certificate ${i + 1}" onerror="this.remove()"></div>`).join('');
 
-        document.getElementById('award-list').innerHTML = awards.map(a => {
-            const s = slug(a.name);
+        document.getElementById('award-list').innerHTML = awards.map((a, k) => {
             return `<details class="award"><summary><span>${a.name}<small>${a.from}, ${a.year}</small></span></summary>
-  <div class="dbody"><div class="trio">${[1, 2, 3].map(n => `<div class="slide" data-zoom="${P}Awards/${s}/${n}.png"><i>Photo ${n}</i><img src="${P}Awards/${s}/${n}.png" alt="${a.name} photo ${n}" onerror="this.remove()"></div>`).join('')}</div>
-  <p>${a.desc}</p></div></details>`;
+  <div class="dbody"><div class="trio">${[1, 2, 3].map(n => { const num = k * 3 + n; return `<div class="slide" data-zoom="${P}Awards/${num}.png"><i>Photo ${num}</i><img src="${P}Awards/${num}.png" alt="${a.name} photo ${n}" onerror="this.remove()"></div>`; }).join('')}</div></div></details>`;
         }).join('');
 
         // fill the carousels: placeholders first, real photos once the folder list arrives
@@ -1127,6 +1141,59 @@
             fillCarousels(paths);
             let t; addEventListener('resize', () => { clearTimeout(t); t = setTimeout(() => fillCarousels(paths), 250); });
         });
+
+        // ---- carousel motion: drifts on its own; scroll, swipe or drag it and it follows you, then drifts again ----
+        const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function setupMotion(car, period) {
+            const st = car._st = car._st || { dragging: false, idleAt: 0, auto: false };
+            st.period = period;
+            car.scrollLeft = period;                 // start in the middle copy so left scrolling works too
+            st.last = car.scrollLeft; st.pos = st.last; st.auto = false;
+            if (car._bound) return;
+            car._bound = true;
+            const touch = () => { st.idleAt = performance.now() + 1500; };   // drift resumes 1.5s after you stop
+            car.addEventListener('wheel', touch, { passive: true });
+            car.addEventListener('touchstart', touch, { passive: true });
+            car.addEventListener('touchmove', touch, { passive: true });
+            car.addEventListener('scroll', () => { if (Math.abs(car.scrollLeft - st.last) > 1.5) touch(); }, { passive: true });
+            car.addEventListener('pointerdown', e => {
+                if (e.pointerType !== 'mouse') return;
+                st.dragging = true; st.startX = e.clientX; st.startLeft = car.scrollLeft;
+                car.classList.add('drag'); car.setPointerCapture(e.pointerId); touch();
+            });
+            car.addEventListener('pointermove', e => {
+                if (!st.dragging) return;
+                car.scrollLeft = st.startLeft - (e.clientX - st.startX); touch();
+            });
+            const end = () => { st.dragging = false; car.classList.remove('drag'); touch(); };
+            car.addEventListener('pointerup', end);
+            car.addEventListener('pointercancel', end);
+            car.addEventListener('dragstart', e => e.preventDefault());
+        }
+
+        let lastT = performance.now();
+        (function tick(now) {
+            const dt = Math.min(now - lastT, 100) / 1000; lastT = now;
+            document.querySelectorAll('.car:not(.still)').forEach(car => {
+                const st = car._st; if (!st) return;
+                const P = st.period;
+                if (now < st.idleAt || st.dragging || reduceMotion) {
+                    st.auto = false;
+                    // keep the user inside the middle copy so it never runs out
+                    let s = car.scrollLeft, d = 0;
+                    if (s >= 2 * P) d = -P; else if (s < P) d = P;
+                    if (d) { car.scrollLeft = s + d; if (st.dragging) st.startLeft += d; }
+                } else {
+                    if (!st.auto) { st.pos = car.scrollLeft; st.auto = true; }
+                    st.pos += PX_PER_SEC * dt;
+                    if (st.pos >= 2 * P) st.pos -= P; else if (st.pos < P) st.pos += P;
+                    car.scrollLeft = st.pos;
+                }
+                st.last = car.scrollLeft;
+            });
+            requestAnimationFrame(tick);
+        })(performance.now());
 
         // copy credentials
         document.addEventListener('click', e => {
