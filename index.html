@@ -139,15 +139,19 @@
 
         .hero .wrap {
             display: grid;
-            grid-template-columns: 1.2fr .8fr;
+            grid-template-columns: 1.1fr .9fr;
             gap: 32px;
             align-items: end
         }
 
         .name {
-            font: 400 clamp(72px, 13vw, 190px)/.88 var(--d);
+            font: 400 clamp(64px, 11.5vw, 170px)/.88 var(--d);
             color: var(--blue);
             text-transform: uppercase
+        }
+
+        .name span:first-child {
+            font-size: .6em
         }
 
         .role {
@@ -213,7 +217,7 @@
         .pic {
             position: relative;
             aspect-ratio: 4/5;
-            max-width: 420px;
+            max-width: 520px;
             justify-self: end;
             width: 100%
         }
@@ -234,7 +238,7 @@
             height: 100%;
             object-fit: cover;
             object-position: top;
-            border-radius: 0 0 200px 200px;
+            border-radius: 0;
             z-index: 1
         }
 
@@ -779,16 +783,17 @@
     <header class="hero">
         <div class="wrap">
             <div>
-                <h1 class="name"><span>Juan</span><span>Dela Cruz</span></h1>
-                <p class="role"><strong>BSIT student</strong>I design and build systems that are simple to use and solid
+                <h1 class="name"><span>Myeisha Ann</span><span>Coruno</span></h1>
+                <p class="role"><strong>BSIT student</strong>I design and build systems that are simple to use and
+                    solid
                     underneath, from the first wireframe to the last database query.</p>
                 <div class="tags"><span>UI/UX design</span><span>Frontend development</span><span>Software
                         development</span><span>Full-stack web and mobile development</span></div>
-                <a class="btn" href="resume.pdf" download>Download resume</a><a class="btn ghost" href="#projects">See
+                <a class="btn" href="Resume.pdf" download>Download resume</a><a class="btn ghost" href="#projects">See
                     my projects</a>
             </div>
             <div class="pic">
-                <img src="photos/me.png" alt="Portrait of Juan Dela Cruz"
+                <img src="photos/me.png" alt=""
                     onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'Add photos/me.png'}))">
             </div>
         </div>
@@ -798,24 +803,25 @@
         <div class="wrap">
             <h2>About</h2>
             <div class="about">
-                <p>I'm a third-year BSIT student in Manila. I like projects where someone actually has to use the thing:
-                    a barangay resident, a pet owner, a student who needs a quiet place to talk.</p>
+                <p>I'm a third-year BSIT student specializing in Mobile and Internet Technologies, passionate about
+                    building practical applications and technology-driven solutions that solve real-world problems.</p>
                 <div class="skills">
                     <div>
-                        <h4>Design</h4>
-                        <p>Figma, wireframes, prototypes, design systems</p>
+                        <h4>Programming Languages</h4>
+                        <p>Java, Kotlin, Dart, Python, JavaScript, Bash Scripting</p>
                     </div>
                     <div>
-                        <h4>Frontend</h4>
-                        <p>HTML, CSS, JavaScript, React, Flutter</p>
+                        <h4>Development Technologies</h4>
+                        <p>Flutter, Android Studio, XML, HTML, CSS, Firebase</p>
                     </div>
                     <div>
-                        <h4>Backend</h4>
-                        <p>PHP, Node.js, Laravel, REST APIs</p>
+                        <h4>Tools & Systems</h4>
+                        <p>Git, GitHub, Figma, Linux, Microsoft Office</p>
                     </div>
                     <div>
-                        <h4>Data and tools</h4>
-                        <p>MySQL, Firebase, Git, Arduino</p>
+                        <h4>Technical Skills</h4>
+                        <p>Database Management, Database Integration, UI/UX Design, Hardware and Software
+                            Troubleshooting</p>
                     </div>
                 </div>
             </div>
@@ -884,7 +890,7 @@
 
     <script>
         const P = 'photos/';
-        // Each carousel: folder, number of images, kind. Name files 1.png, 2.png, ... inside the folder.
+        // Each project's car list: [folder, kind, number (no longer used), label]. Folders are scanned automatically.
         const projects = [
             {
                 name: 'MyFairview', year: 2025, stack: ['Flutter', 'Laravel', 'MySQL', 'Figma'],
@@ -892,7 +898,7 @@
                 desc: 'A community portal for Fairview residents to report issues, read announcements, and request barangay documents.',
                 role: ['Lead UI/UX designer', 'Built the web frontend', 'Wrote part of the REST API'],
                 feats: ['Issue reporting with photo upload', 'Document requests with status tracking', 'Announcements and push notifications'],
-                demo: {url: 'https://example.com/myfairview', user: 'demo@myfairview.com', pass: 'demo1234'}
+                demo: { url: 'https://example.com/myfairview', user: 'demo@myfairview.com', pass: 'demo1234' }
             },
             {
                 name: 'Safespace', year: 2025, stack: ['React Native', 'Node.js', 'MongoDB'],
@@ -903,7 +909,7 @@
             },
             {
                 name: 'Ecotumbler', year: 2024, stack: ['Arduino', 'Flutter', 'Firebase', 'IoT'],
-                car: [['App', 'app', 6, 'Mobile app'], ['Hardware', 'hw', 6, 'Hardware']],
+                car: [['App', 'app', 3, 'Mobile app'], ['Hardware', 'hw', 6, 'Hardware']],
                 desc: 'A smart tumbler that tracks water intake and rewards eco-friendly habits, built as our capstone.',
                 role: ['App designer and developer', 'Helped wire and test the hardware'],
                 feats: ['Live water-level sensing', 'Habit streaks and reward points', 'Syncs to the app over Bluetooth']
@@ -924,19 +930,67 @@
             }
         ];
         const awards = [
-            {name: 'Best Capstone Project', from: 'Your University, College of IT', year: 2025, desc: 'Awarded to Ecotumbler for innovation and real-world impact among 30 capstone teams.'},
-            {name: '1st Place, Hackathon', from: 'Tech Event Name', year: 2024, desc: 'Built a working prototype in 24 hours with a team of four.'},
-            {name: "Dean's Lister", from: 'Your University', year: 2024, desc: 'Recognized for a general weighted average of 1.5 or better.'}
+            { name: 'Best Capstone Project', from: 'Your University, College of IT', year: 2025, desc: 'Awarded to Ecotumbler for innovation and real-world impact among 30 capstone teams.' },
+            { name: '1st Place, Hackathon', from: 'Tech Event Name', year: 2024, desc: 'Built a working prototype in 24 hours with a team of four.' },
+            { name: "Dean's Lister", from: 'Your University', year: 2024, desc: 'Recognized for a general weighted average of 1.5 or better.' }
         ];
         const certs = ['Certificate name 1', 'Certificate name 2', 'Certificate name 3', 'Certificate name 4'];
 
         const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-');
         const slide = (path, cls, label) =>
             `<div class="slide ${cls}"><i>${label}</i><img src="${path}" alt="${label}" loading="lazy" onerror="this.remove()"></div>`;
-        const carousel = (folder, sub, kind, n, label, speed) => {
-            const one = Array.from({length: n}, (_, k) => slide(`${P}${folder}/${sub}/${k + 1}.png`, kind, `${label} ${k + 1}`)).join('');
-            return `<div class="label">${label} UI</div><div class="car"><div class="track" style="--t:${speed}s">${one}${one}</div></div>`;
+
+        // ---- Auto-detect photos: shows whatever is in each folder, any number, any filename ----
+        const REPO = 'Msha30/MyPortfolio', BRANCH = 'main';
+        const IMG = /\.(png|jpe?g|webp|gif|avif)$/i;
+        const SIZE = { app: 150, web: 320, hw: 240 };   // slide widths, same as the CSS
+        const GAP = 18, PX_PER_SEC = 28;                // carousel speed (lower = slower)
+
+        async function loadTree() {
+            let cached = null;
+            try { cached = JSON.parse(localStorage.getItem('photo-tree')); } catch (e) { }
+            if (cached && Date.now() - cached.t < 120000) return cached.paths;
+            try {
+                const res = await fetch(`https://api.github.com/repos/${REPO}/git/trees/${BRANCH}?recursive=1`);
+                if (!res.ok) throw new Error(res.status);
+                const data = await res.json();
+                const paths = data.tree
+                    .filter(f => f.type === 'blob' && f.path.startsWith('photos/') && IMG.test(f.path))
+                    .map(f => f.path);
+                try { localStorage.setItem('photo-tree', JSON.stringify({ t: Date.now(), paths })); } catch (e) { }
+                return paths;
+            } catch (e) { return cached ? cached.paths : []; }
+        }
+
+        // files directly inside a folder (folder name match ignores upper/lower case)
+        const filesIn = (paths, dir) => {
+            const d = (dir + '/').toLowerCase();
+            return paths
+                .filter(p => p.toLowerCase().startsWith(d) && !p.slice(d.length).includes('/'))
+                .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
         };
+
+        // n and speed are no longer used; they stay so the project list below doesn't change
+        const carousel = (folder, sub, kind, n, label, speed) =>
+            `<div class="label">${label} UI</div><div class="car" data-dir="photos/${folder}/${sub}" data-kind="${kind}" data-label="${label}"><div class="track"></div></div>`;
+
+        function fillCarousels(paths) {
+            document.querySelectorAll('.car[data-dir]').forEach(car => {
+                const { dir, kind, label } = car.dataset;
+                let files = filesIn(paths || [], dir);
+                if (!files.length) files = [null, null, null, null];   // empty folder: placeholders
+                const w = SIZE[kind] + GAP;
+                const reps = Math.max(1, Math.ceil(car.clientWidth / (files.length * w)));
+                const half = Array.from({ length: reps }, () => files).flat()
+                    .map((f, i) => f
+                        ? slide(f, kind, `${label} ${i + 1}`)
+                        : `<div class="slide ${kind}"><i>${paths ? 'Add images to ' + dir : ''}</i></div>`)
+                    .join('');
+                const track = car.querySelector('.track');
+                track.innerHTML = half + half;
+                track.style.setProperty('--t', (reps * files.length * w / PX_PER_SEC) + 's');
+            });
+        }
 
         document.getElementById('proj-list').innerHTML = projects.map((p, i) => `
 <article class="proj">
@@ -968,17 +1022,24 @@
   <p>${a.desc}</p></div></details>`;
         }).join('');
 
+        // fill the carousels: placeholders first, real photos once the folder list arrives
+        fillCarousels(null);
+        loadTree().then(paths => {
+            fillCarousels(paths);
+            let t; addEventListener('resize', () => { clearTimeout(t); t = setTimeout(() => fillCarousels(paths), 250); });
+        });
+
         // copy credentials
         document.addEventListener('click', e => {
             const c = e.target.closest('[data-copy]');
-            if (c) {navigator.clipboard?.writeText(c.dataset.copy); const t = c.textContent; c.textContent = 'Copied'; setTimeout(() => c.textContent = t, 900); return;}
+            if (c) { navigator.clipboard?.writeText(c.dataset.copy); const t = c.textContent; c.textContent = 'Copied'; setTimeout(() => c.textContent = t, 900); return; }
             const z = e.target.closest('[data-zoom]');
             const img = z && z.querySelector('img');
             const lb = document.getElementById('lb');
-            if (img) {lb.querySelector('img').src = img.src; lb.classList.add('on');}
+            if (img) { lb.querySelector('img').src = img.src; lb.classList.add('on'); }
             else if (lb.classList.contains('on')) lb.classList.remove('on');
         });
-        document.addEventListener('keydown', e => {if (e.key === 'Escape') document.getElementById('lb').classList.remove('on');});
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') document.getElementById('lb').classList.remove('on'); });
         document.getElementById('yr').textContent = new Date().getFullYear();
     </script>
 </body>
