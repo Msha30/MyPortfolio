@@ -383,17 +383,16 @@
         .slide.app {
             width: 150px;
             aspect-ratio: 9/19.3;
-            border: 4px solid var(--ink);
             border-radius: 8px
         }
 
         .slide.web {
-            width: 320px;
-            aspect-ratio: 16/10
+            width: 420px;
+            aspect-ratio: 2/1
         }
 
         .slide.hw {
-            width: 240px;
+            width: 340px;
             aspect-ratio: 4/3
         }
 
@@ -542,30 +541,42 @@
         }
 
 
-        /* education */
-        .edu {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 32px
+        /* education: one clean column */
+        .edu-item {
+            padding: 32px 0;
+            border-top: 1px solid var(--line)
         }
 
-        .edu .yr {
-            font: 400 56px var(--d);
-            color: var(--ink)
+        .edu-item:first-child {
+            border-top: 0;
+            padding-top: 0
         }
 
-        @media(max-width:700px) {
-            .edu {
-                grid-template-columns: 1fr;
-                gap: 8px
-            }
+        .edu-item h3 {
+            font-size: clamp(26px, 3.6vw, 38px);
+            max-width: 26em
         }
 
-        /* certs */
+        .edu-meta {
+            font: italic 400 19px var(--s);
+            color: var(--blue);
+            margin: 8px 0 14px
+        }
+
+        .edu-item ul {
+            padding-left: 18px;
+            color: var(--mute)
+        }
+
+        .edu-item li {
+            margin-bottom: 4px
+        }
+
+        /* certs: 2x2 */
         .certs {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px
         }
 
         .cert {
@@ -613,9 +624,9 @@
             font-size: 13px
         }
 
-        @media(max-width:860px) {
+        @media(max-width:560px) {
             .certs {
-                grid-template-columns: 1fr 1fr
+                grid-template-columns: 1fr
             }
         }
 
@@ -673,7 +684,7 @@
 
         .links {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 16px
         }
 
@@ -703,7 +714,7 @@
             word-break: break-all
         }
 
-        @media(max-width:760px) {
+        @media(max-width:600px) {
             .links {
                 grid-template-columns: 1fr
             }
@@ -718,9 +729,10 @@
             padding: 0 0 28px
         }
 
+        /* alternating section backgrounds (page order: about, projects, awards, education, certifications, contact) */
         #about,
-        #education,
-        #awards {
+        #awards,
+        #certifications {
             background: var(--cream)
         }
 
@@ -779,13 +791,13 @@
 
     <nav>
         <div class="wrap">
-            <b>JDC</b>
+            <b>MC</b>
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#awards">Awards</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#awards">Awards</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -845,26 +857,43 @@
         </div>
     </section>
 
+    <section id="awards">
+        <div class="wrap">
+            <h2>Awards</h2>
+            <div id="award-list"></div>
+        </div>
+    </section>
+
     <section id="education">
         <div class="wrap">
             <h2>Education</h2>
-            <div class="edu">
-                <div>
-                    <div class="yr">2022 – 2026</div>
-                    <p class="muted">Expected graduation</p>
-                </div>
-                <div>
-                    <h3>Your University Name</h3>
-                    <p class="serif" style="font-size:20px;color:var(--blue);margin:4px 0 16px">Bachelor of Science in
-                        Information Technology</p>
-                    <ul style="padding-left:18px">
-                        <li>Dean's Lister, 4 semesters</li>
-                        <li>Capstone project: Ecotumbler, rated Excellent by the panel</li>
-                        <li>Lead designer for the college's IT Society website</li>
-                        <li>Relevant coursework: Web Systems, Mobile Development, Database Management, HCI</li>
-                    </ul>
-                </div>
-            </div>
+
+            <article class="edu-item">
+                <h3>BS in Information Technology with Specialization in Mobile and Internet Technology (BSIT-MI)</h3>
+                <p class="edu-meta">2023 – 2027 &nbsp;|&nbsp; NU Fairview</p>
+                <ul>
+                    <li>Accomplishment 1</li>
+                    <li>Accomplishment 2</li>
+                </ul>
+            </article>
+
+            <article class="edu-item">
+                <h3>STEM Strand – Senior High School</h3>
+                <p class="edu-meta">2021 – 2023 &nbsp;|&nbsp; NU Fairview</p>
+                <ul>
+                    <li>Accomplishment 1</li>
+                    <li>Accomplishment 2</li>
+                </ul>
+            </article>
+
+            <article class="edu-item">
+                <h3>Junior High School</h3>
+                <p class="edu-meta">2017 – 2021 &nbsp;|&nbsp; Divine Grace School</p>
+                <ul>
+                    <li>Accomplishment 1</li>
+                    <li>Accomplishment 2</li>
+                </ul>
+            </article>
         </div>
     </section>
 
@@ -872,13 +901,6 @@
         <div class="wrap">
             <h2>Certifications</h2>
             <div class="certs" id="certs"></div>
-        </div>
-    </section>
-
-    <section id="awards">
-        <div class="wrap">
-            <h2>Awards</h2>
-            <div id="award-list"></div>
         </div>
     </section>
 
@@ -891,6 +913,8 @@
                 <a href="https://linkedin.com/in/your-handle" target="_blank"
                     rel="noopener"><small>LinkedIn</small><b>linkedin.com/in/your-handle</b></a>
                 <a href="tel:+639171234567"><small>Phone</small><b>+63 917 123 4567</b></a>
+                <a href="https://facebook.com/your-team-page" target="_blank"
+                    rel="noopener"><small>Team Facebook Page</small><b>facebook.com/your-team-page</b></a>
             </div>
         </div>
     </section>
@@ -937,7 +961,7 @@
             { name: '1st Place, Hackathon', from: 'Tech Event Name', year: 2024, desc: 'Built a working prototype in 24 hours with a team of four.' },
             { name: "Dean's Lister", from: 'Your University', year: 2024, desc: 'Recognized for a general weighted average of 1.5 or better.' }
         ];
-        const certs = ['Certificate name 1', 'Certificate name 2', 'Certificate name 3', 'Certificate name 4'];
+        const certs = ['', '', '', ''];
 
         const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-');
         const slide = (path, cls, label) =>
@@ -946,9 +970,9 @@
         // ---- Auto-detect photos: shows whatever is in each folder, any number, any filename ----
         const REPO = 'Msha30/MyPortfolio', BRANCH = 'main';
         const IMG = /\.(png|jpe?g|webp|gif|avif)$/i;
-        const SIZE = { app: 150, web: 320, hw: 240 };   // slide widths, same as the CSS
+        const SIZE = { app: 150, web: 420, hw: 340 };   // slide widths, same as the CSS
         const GAP = 18, PX_PER_SEC = 28;                // carousel speed (lower = slower)
-        const STATIC_MAX = { app: 6, hw: 6, web: 0 };   // this many pics or fewer: no scrolling, just show them
+        const STATIC_MAX = { app: 6, hw: 4, web: 0 };   // this many pics or fewer: no scrolling, just show them
 
         async function loadTree() {
             let cached = null;
